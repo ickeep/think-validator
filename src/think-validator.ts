@@ -8,15 +8,10 @@ export const regs = {
 export default {
   rules: {
     nameOrPhoneOrMail(value: string) {
-      const isName = regs.name.test(value)
-      const isPhone = regs.phone.test(value)
-      const isMail = regs.mail.test(value)
-      return isName || isPhone || isMail
+      return regs.name.test(value) || regs.phone.test(value) || regs.mail.test(value)
     },
     phoneOrMail(value: string) {
-      const isPhone = regs.phone.test(value)
-      const isMail = regs.mail.test(value)
-      return isPhone || isMail
+      return regs.phone.test(value) || regs.mail.test(value)
     },
     name(value: string) {
       return regs.name.test(value)
